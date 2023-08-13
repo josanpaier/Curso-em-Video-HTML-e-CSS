@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste JavaScrpt</title>
+    <script>
+        var quebrada = true;
+        function alteraLampada(tipo) {
+            if (tipo == 1) {
+                arquivo = "_imagens/lampada-acesa.jpg";
+            }
+            if (tipo == 2) {
+                arquivo = "_imagens/lampada-apagada.jpg";
+            }
+            if (tipo == 3) {
+                arquivo = "_imagens/lampada-quebrada.jpg";
+            }
+            if (quebrada)
+            document.getElementById("luz").src = arquivo;
+            if (tipo == 3) {
+                quebrada = false;
+            }
+        }
+    </script>
+</head>
+<body>
+  <h1>Acenda a lâmpada</h1>
+  <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="alteraLampada(1)" onmouseout="alteraLampada(2)" onclick="alteraLampada(3)"/>
+</body>
+</html>
